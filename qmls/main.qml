@@ -12,5 +12,6 @@ Window {
 
     BodyItem {
         id: bodyItem
+        anchors.fill: parent
     }
 }

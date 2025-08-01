@@ -23,6 +23,7 @@ set(QML_FILES
    qmls/main.qml
    qmls/Constants.qml
    qmls/BodyItem.qml
+   qmls/FilePathEdit.qml
 )
 
 qt_add_qml_module(${PROJECT_NAME}
