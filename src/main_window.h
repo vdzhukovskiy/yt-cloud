@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QPointer>
 #include <QScopedPointer>
 
 namespace Ui
@@ -16,5 +17,6 @@ public:
     ~main_window_t();
 
 private:
-    QScopedPointer<Ui::main_window> ui;
+    QScopedPointer<Ui::main_window> ui_;
+    QPointer<QWidget> central_widget_;
 };
