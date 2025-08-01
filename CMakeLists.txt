@@ -22,6 +22,7 @@ qt_add_executable(${PROJECT_NAME}
 set(QML_FILES
    qmls/main.qml
    qmls/Constants.qml
+   qmls/BodyItem.qml
 )
 
 qt_add_qml_module(${PROJECT_NAME}
