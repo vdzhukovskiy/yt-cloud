@@ -9,21 +9,31 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Quick Gui)
 
 set(PROJECT_SOURCES
    src/main.cpp
-   src/main_window.h
-   src/main_window.cpp
-   src/main_window.ui
 )
 
-add_executable(${PROJECT_NAME}
+qt_add_executable(${PROJECT_NAME}
    ${PROJECT_SOURCES}
+)
+
+set(QML_FILES
+   qmls/main.qml
+   qmls/Constants.qml
+)
+
+qt_add_qml_module(${PROJECT_NAME}
+   URI qmls
+   VERSION 1.0
+   QML_FILES ${QML_FILES}
+   RESOURCES qmls/qmldir
+   RESOURCE_PREFIX "/"
 )
 
 target_link_libraries(${PROJECT_NAME}
    PRIVATE
-   Qt6::Core
-   Qt6::Widgets
+   Qt6::Gui
+   Qt6::Quick
 )
